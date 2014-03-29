@@ -2,7 +2,7 @@
 
 This is a repackaging fork of the Chromium Embedded Framework (CEF) binary distribution files for Windows, found at http://www.magpcss.net/cef_downloads/. 
 
-To make it work properly for developers on VS2010, VS2012 and VS2013 wanting to develop [CefSharp](http://github.com/cefsharp/CefSharp), we need to do some local modifications to make the project compile properly. This purpose of this repository is to track and maintain these modifications.
+To make it work properly for developers on VS2010, VS2012 and VS2013 wanting to develop [CefSharp](http://github.com/cefsharp/CefSharp), we need to do some local modifications ([use dynamic linking](https://code.google.com/p/chromiumembedded/wiki/LinkingDifferentRunTimeLibraries)) to make CefSharp.Core compile properly. This purpose of this repository is to track and maintain these modifications.
 
 The modifications allow us to:
 
@@ -19,6 +19,8 @@ Note to self: Add a diagram here based on: http://codepen.io/jornh/full/Iyebk ex
 TODO: Explain each of the red pieces along the lines of this rough plan (subject to change):
 Foundation z: NuGets
 
+# # detailed
+
 - C.F.Base.x64|Win32 ... (~ Bcl. Xxx ) .... 
 - C.Foundation.Res.Lang
 - C.Foundation.Res.Dev
@@ -26,7 +28,7 @@ Foundation z: NuGets
 - C.Foundation.WebGL (incl d*dxxxx43|46)
 - C.F.MDwrapper
 
-## Easy
+# # Easy
 
 - C.F.Bundle.x64(NoLang)
 - C.F.Bundle.Win32
